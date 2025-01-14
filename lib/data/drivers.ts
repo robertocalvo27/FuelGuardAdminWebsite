@@ -1,0 +1,222 @@
+export const drivers = [
+  {
+    id: "D001",
+    name: "Juan Martínez",
+    document: "42567890",
+    vehicle: "Volquete 15T",
+    plate: "ABC-123",
+    company: "Transportes del Sur",
+    lastDispatch: "Hace 2 horas",
+    status: "Activo",
+    efficiency: "92%"
+  },
+  {
+    id: "D002",
+    name: "Ana López",
+    document: "43678901",
+    vehicle: "Cisterna 20T",
+    plate: "XYZ-789",
+    company: "Minera Norte",
+    lastDispatch: "Hace 1 hora",
+    status: "Activo",
+    efficiency: "95%"
+  },
+  {
+    id: "D003",
+    name: "Carlos Ramírez",
+    document: "41789012",
+    vehicle: "Camión 10T",
+    plate: "DEF-456",
+    company: "Transportes del Sur",
+    lastDispatch: "Hace 30 minutos",
+    status: "Activo",
+    efficiency: "88%"
+  },
+  {
+    id: "D004",
+    name: "María García",
+    document: "44890123",
+    vehicle: "Volquete 20T",
+    plate: "GHI-789",
+    company: "Minera Centro",
+    lastDispatch: "Hace 4 horas",
+    status: "Activo",
+    efficiency: "91%"
+  },
+  {
+    id: "D005",
+    name: "Pedro Sánchez",
+    document: "45901234",
+    vehicle: "Cisterna 15T",
+    plate: "JKL-012",
+    company: "Transportes Este",
+    lastDispatch: "Hace 1 día",
+    status: "Inactivo",
+    efficiency: "87%"
+  },
+  {
+    id: "D006",
+    name: "Laura Torres",
+    document: "46012345",
+    vehicle: "Camión 12T",
+    plate: "MNO-345",
+    company: "Minera Sur",
+    lastDispatch: "Hace 3 horas",
+    status: "Activo",
+    efficiency: "94%"
+  },
+  {
+    id: "D007",
+    name: "Roberto Silva",
+    document: "47123456",
+    vehicle: "Volquete 18T",
+    plate: "PQR-678",
+    company: "Transportes Oeste",
+    lastDispatch: "Hace 5 horas",
+    status: "Activo",
+    efficiency: "90%"
+  },
+  {
+    id: "D008",
+    name: "Carmen Ruiz",
+    document: "48234567",
+    vehicle: "Cisterna 25T",
+    plate: "STU-901",
+    company: "Minera Norte",
+    lastDispatch: "Hace 2 días",
+    status: "Inactivo",
+    efficiency: "89%"
+  },
+  {
+    id: "D009",
+    name: "Miguel Flores",
+    document: "49345678",
+    vehicle: "Camión 8T",
+    plate: "VWX-234",
+    company: "Transportes Centro",
+    lastDispatch: "Hace 6 horas",
+    status: "Activo",
+    efficiency: "93%"
+  },
+  {
+    id: "D010",
+    name: "Isabel Castro",
+    document: "40456789",
+    vehicle: "Volquete 22T",
+    plate: "YZA-567",
+    company: "Minera Este",
+    lastDispatch: "Hace 1 hora",
+    status: "Activo",
+    efficiency: "96%"
+  },
+  {
+    id: "D011",
+    name: "Fernando Díaz",
+    document: "41567890",
+    vehicle: "Cisterna 18T",
+    plate: "BCD-890",
+    company: "Transportes Norte",
+    lastDispatch: "Hace 4 días",
+    status: "Inactivo",
+    efficiency: "85%"
+  },
+  {
+    id: "D012",
+    name: "Patricia Vargas",
+    document: "42678901",
+    vehicle: "Camión 15T",
+    plate: "EFG-123",
+    company: "Minera Oeste",
+    lastDispatch: "Hace 8 horas",
+    status: "Activo",
+    efficiency: "92%"
+  },
+  {
+    id: "D013",
+    name: "Ricardo Mendoza",
+    document: "43789012",
+    vehicle: "Volquete 25T",
+    plate: "HIJ-456",
+    company: "Transportes Sur",
+    lastDispatch: "Hace 2 horas",
+    status: "Activo",
+    efficiency: "91%"
+  },
+  {
+    id: "D014",
+    name: "Diana Ortiz",
+    document: "44890123",
+    vehicle: "Cisterna 22T",
+    plate: "KLM-789",
+    company: "Minera Centro",
+    lastDispatch: "Hace 3 días",
+    status: "Inactivo",
+    efficiency: "88%"
+  },
+  {
+    id: "D015",
+    name: "Javier Luna",
+    document: "45901234",
+    vehicle: "Camión 20T",
+    plate: "NOP-012",
+    company: "Transportes Este",
+    lastDispatch: "Hace 5 horas",
+    status: "Activo",
+    efficiency: "94%"
+  },
+  {
+    id: "D016",
+    name: "Sofía Rojas",
+    document: "46012345",
+    vehicle: "Volquete 15T",
+    plate: "QRS-345",
+    company: "Minera Sur",
+    lastDispatch: "Hace 1 hora",
+    status: "Activo",
+    efficiency: "95%"
+  },
+  {
+    id: "D017",
+    name: "Andrés Paz",
+    document: "47123456",
+    vehicle: "Cisterna 20T",
+    plate: "TUV-678",
+    company: "Transportes Oeste",
+    lastDispatch: "Hace 7 horas",
+    status: "Activo",
+    efficiency: "90%"
+  },
+  {
+    id: "D018",
+    name: "Lucía Vega",
+    document: "48234567",
+    vehicle: "Camión 12T",
+    plate: "WXY-901",
+    company: "Minera Norte",
+    lastDispatch: "Hace 2 días",
+    status: "Inactivo",
+    efficiency: "87%"
+  },
+  {
+    id: "D019",
+    name: "Gabriel Ríos",
+    document: "49345678",
+    vehicle: "Volquete 18T",
+    plate: "ZAB-234",
+    company: "Transportes Centro",
+    lastDispatch: "Hace 3 horas",
+    status: "Activo",
+    efficiency: "93%"
+  },
+  {
+    id: "D020",
+    name: "Valentina Cruz",
+    document: "40456789",
+    vehicle: "Cisterna 25T",
+    plate: "CDE-567",
+    company: "Minera Este",
+    lastDispatch: "Hace 4 horas",
+    status: "Activo",
+    efficiency: "92%"
+  }
+];
