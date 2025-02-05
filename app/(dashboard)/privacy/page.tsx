@@ -1,7 +1,7 @@
 "use client"
 
-import { SecurityPolicy } from "@/components/security-policy"
+import { PrivacyPolicy } from "@/components/privacy-policy"
 
 export default function PrivacyPolicyPage() {
-  return <SecurityPolicy />
+  return <PrivacyPolicy />
 } 

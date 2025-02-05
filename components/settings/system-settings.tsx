@@ -22,6 +22,7 @@ import {
   Settings
 } from "lucide-react"
 import { useState } from "react"
+import { Switch } from "@/components/ui/switch"
 
 export function SystemSettings() {
   const [activeTab, setActiveTab] = useState('notifications')
@@ -68,22 +69,26 @@ export function SystemSettings() {
   ]
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <div>
-          <h1 className="text-2xl font-bold">Configuración del Sistema</h1>
-          <p className="text-muted-foreground">
-            Administra las notificaciones, políticas de datos y configuraciones generales
-          </p>
-        </div>
-        <Button
-          onClick={handleSave}
-          className="flex items-center"
-        >
-          <Save className="w-4 h-4 mr-2" />
-          Guardar Cambios
-        </Button>
+    <div className="flex-1 space-y-4 p-8">
+      <div className="flex items-center justify-between">
+        <h2 className="text-3xl font-bold tracking-tight">Configuración del Sistema</h2>
       </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Preferencias Generales</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex items-center justify-between">
+            <Label htmlFor="notifications">Notificaciones</Label>
+            <Switch id="notifications" />
+          </div>
+          <div className="flex items-center justify-between">
+            <Label htmlFor="emails">Correos de Alerta</Label>
+            <Switch id="emails" />
+          </div>
+          {/* Más opciones según sea necesario */}
+        </CardContent>
+      </Card>
 
       {successMessage && (
         <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">

@@ -3,10 +3,22 @@
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { GaugeCircle, Users, Truck, Settings, BarChart3, Shield, ChevronDown, Home } from "lucide-react"
+import { 
+  GaugeCircle, 
+  Users, 
+  Truck, 
+  Settings, 
+  BarChart3, 
+  Shield, 
+  ChevronDown, 
+  Home, 
+  Smartphone,
+  Download
+} from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
+import { Card, CardContent } from "@/components/ui/card"
 
 const sidebarNavItems = [
   {
@@ -71,8 +83,8 @@ export function Sidebar({ className }: SidebarProps) {
   }
 
   return (
-    <div className={cn("pb-12", className)}>
-      <div className="space-y-4 py-4">
+    <div className={cn("pb-6 min-h-screen flex flex-col", className)}>
+      <div className="flex-1 space-y-4 py-4">
         <div className="px-4 py-2">
           <h2 className="mb-2 px-2 text-xl font-semibold tracking-tight">
             FuelGuard
@@ -142,6 +154,54 @@ export function Sidebar({ className }: SidebarProps) {
             ))}
           </div>
         </ScrollArea>
+      </div>
+
+      <div className="flex-1" />
+
+      <div className="px-3 mb-6">
+        <Card className="bg-primary/5 border-none">
+          <CardContent className="p-4 space-y-4">
+            <div className="flex items-center space-x-2">
+              <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                <Smartphone className="h-5 w-5 text-primary" />
+              </div>
+              <div className="space-y-1">
+                <h4 className="text-sm font-semibold">App Móvil Disponible</h4>
+                <p className="text-xs text-muted-foreground">
+                  Descarga nuestra app para un mejor control
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Button 
+                variant="outline" 
+                className="w-full justify-start"
+                asChild
+              >
+                <Link href="#" className="flex items-center space-x-2">
+                  <Download className="h-4 w-4" />
+                  <span className="text-sm">iOS App</span>
+                </Link>
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                className="w-full justify-start"
+                asChild
+              >
+                <Link href="#" className="flex items-center space-x-2">
+                  <Download className="h-4 w-4" />
+                  <span className="text-sm">Android App</span>
+                </Link>
+              </Button>
+            </div>
+
+            <div className="text-[10px] text-muted-foreground text-center">
+              Disponible para iOS 14.0+ y Android 8.0+
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )
