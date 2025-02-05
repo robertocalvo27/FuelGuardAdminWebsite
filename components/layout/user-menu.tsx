@@ -10,12 +10,19 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Settings, HelpCircle, CreditCard, DollarSign, LogOut } from "lucide-react"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
+import { Settings, HelpCircle, CreditCard, DollarSign, LogOut, Book } from "lucide-react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 
 export function UserMenu() {
   const router = useRouter()
+  
   const user = {
     name: "Roberto Calvo",
     email: "roberto.calvo@fuelguard.com",
@@ -47,6 +54,12 @@ export function UserMenu() {
             <Link href="/settings" className="w-full cursor-pointer">
               <Settings className="mr-2 h-4 w-4" />
               <span>Configuración</span>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/knowledge" className="w-full cursor-pointer">
+              <Book className="mr-2 h-4 w-4" />
+              <span>Centro de Conocimiento</span>
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
