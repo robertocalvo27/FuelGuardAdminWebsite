@@ -42,7 +42,7 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="flex-1 space-y-4 p-8 pt-6">
+    <div className="flex-1 space-y-4 p-8">
       <div className="flex items-center justify-between space-y-2">
         <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
       </div>
@@ -52,6 +52,7 @@ export default function DashboardPage() {
           <TabsTrigger value="analytics">Analíticas</TabsTrigger>
           <TabsTrigger value="reports">Reportes</TabsTrigger>
         </TabsList>
+
         <TabsContent value="overview" className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <Card>
@@ -124,7 +125,118 @@ export default function DashboardPage() {
             </Card>
           </div>
         </TabsContent>
-        {/* ... Otros TabsContent ... */}
+
+        <TabsContent value="analytics" className="space-y-4">
+          <div className="flex items-center space-x-2 mb-4">
+            <Select defaultValue={dateRange} onValueChange={setDateRange}>
+              <SelectTrigger className="w-[180px]">
+                <Calendar className="mr-2 h-4 w-4" />
+                <SelectValue placeholder="Periodo" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="day">Hoy</SelectItem>
+                <SelectItem value="week">Esta Semana</SelectItem>
+                <SelectItem value="month">Este Mes</SelectItem>
+                <SelectItem value="quarter">Este Trimestre</SelectItem>
+                <SelectItem value="year">Este Año</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <CardHeader>
+                <CardTitle>Consumo Promedio Diario</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <LineChart />
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Comparativo entre Vehículos</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <BarChart />
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Incidencias por Tipo</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <PieChart />
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Eficiencia de Conductores</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <BarChart />
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="reports" className="space-y-4">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Resumen Mensual de Consumo",
+                description: "Detalle completo del consumo de combustible mensual por vehículo y conductor",
+                icon: Fuel
+              },
+              {
+                title: "Incidencias Críticas",
+                description: "Reporte detallado de incidentes críticos y sus resoluciones",
+                icon: AlertTriangle
+              },
+              {
+                title: "Análisis de Eficiencia",
+                description: "Métricas de eficiencia por conductor y vehículo",
+                icon: BarChart2
+              },
+              {
+                title: "Resumen de Despachos",
+                description: "Detalle de todos los despachos realizados en el periodo",
+                icon: FileText
+              }
+            ].map((report) => (
+              <Card key={report.title}>
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-lg">{report.title}</CardTitle>
+                    <report.icon className="h-5 w-5 text-muted-foreground" />
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {report.description}
+                  </p>
+                  <div className="flex space-x-2">
+                    <Button 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={() => handleDownloadReport(report.title)}
+                    >
+                      <Download className="mr-2 h-4 w-4" />
+                      PDF
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={() => handleDownloadReport(report.title)}
+                    >
+                      <Download className="mr-2 h-4 w-4" />
+                      Excel
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </TabsContent>
       </Tabs>
     </div>
   )

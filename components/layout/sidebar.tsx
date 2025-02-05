@@ -23,7 +23,7 @@ import { Card, CardContent } from "@/components/ui/card"
 const sidebarNavItems = [
   {
     title: "Inicio",
-    href: "/",
+    href: "/home",
     icon: Home,
   },
   {
@@ -84,13 +84,14 @@ export function Sidebar({ className }: SidebarProps) {
 
   return (
     <div className={cn("pb-6 min-h-screen flex flex-col", className)}>
-      <div className="flex-1 space-y-4 py-4">
-        <div className="px-4 py-2">
-          <h2 className="mb-2 px-2 text-xl font-semibold tracking-tight">
-            FuelGuard
-          </h2>
-        </div>
-        <ScrollArea className="px-1">
+      <div className="px-4 py-2">
+        <h2 className="mb-2 px-2 text-xl font-semibold tracking-tight">
+          FuelGuard
+        </h2>
+      </div>
+
+      <div className="flex-1 overflow-hidden">
+        <ScrollArea className="h-[calc(100vh-20rem)]">
           <div className="space-y-1 p-2">
             {sidebarNavItems.map((item) => (
               <div key={item.href}>
@@ -156,9 +157,7 @@ export function Sidebar({ className }: SidebarProps) {
         </ScrollArea>
       </div>
 
-      <div className="flex-1" />
-
-      <div className="px-3 mb-6">
+      <div className="px-3 mt-auto sticky bottom-0 bg-background">
         <Card className="bg-primary/5 border-none">
           <CardContent className="p-4 space-y-4">
             <div className="flex items-center space-x-2">
